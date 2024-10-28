@@ -13,12 +13,31 @@
     </header>
     <main>
         <h2>New Note Form</h2>
-        <section>
-            <form>
-                
-            </form>
-        </section>
+        <form class="newNoteForm">
+            <label for="noteTitle">Title</label>
+            <input type="text" name="noteTitle" id="noteTitle" placeholder="New note title" required>
+            <label for="noteContent">Content</label>
+            <input type="text" name="noteContent" id="noteContent" placeholder="This is a new note" required>
+            <label for="noteSelect">Priority</label>
+            <select name="noteSelect" id="noteSelect">
+                <option selected>Select priority</option>
+                <option value="1">High</option>
+                <option value="2">Medium</option>
+                <option value="3">Low</option>
+            </select>
+            <button type="submit">Add Note</button>
+        </form>
+        
         <h2>Notes List</h2>
+        
+        <section class="notesList">
+        <!-- 
+            <h3>Note title</h3>
+            <p>This is a note content</p>
+            <p>Priority</p> 
+        -->
+        </section>
+       
     </main>
     <footer></footer>
 </body>
