@@ -80,4 +80,5 @@ h2 {
   box-shadow: 0 2px 5px var(--color-card-shadow-light);
   max-width: 600px;
   margin: var(--spacing-lg) auto;
+  
 }
