@@ -5,18 +5,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Afegeix un listener d'esdeveniments per a la presentació del formulari
     form.addEventListener('submit', (event) => {
-        event.preventDefault(); // Prevenir el comportament predeterminat de presentació del formulari
+        event.preventDefault(); 
 
         // Recupera les dades del formulari
-        const title = sanitizeInput(form.noteTitle.value);
-        const content = sanitizeInput(form.noteContent.value);
+        const title = form.noteTitle.value;
+        const content = form.noteContent.value;
         const priority = form.noteSelect.value;
 
         // Valida la selecció de prioritat
         if (priority === "Select priority") {
             console.log("No priority");
             alert("No s'ha seleccionat cap prioritat. Si us plau, seleccioneu una prioritat.");
-            return; // Sortir de la funció anticipadament si no s'ha seleccionat cap prioritat
+            return; 
         }
 
         // Crea un nou node DOM per la nota
@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // Funció per sanititzar l'entrada per prevenir vulnerabilitats de seguretat
 function sanitizeInput(input) {
     const tempElement = window.document.createElement('div');
-    tempElement.innerText = input; // Utilitzant innerText per escapar HTML
-    return tempElement.innerHTML; // Retorna la cadena sanititzada
+    tempElement.innerText = input; 
+    return tempElement.innerHTML;
 }
 
 // Funció per crear un nou element de nota DOM
@@ -41,13 +41,13 @@ function createNoteElement(title, content, priority) {
     noteDiv.classList.add('note');
 
     const titleElement = window.document.createElement('h3');
-    titleElement.innerText = title; // Estableix el títol
+    titleElement.innerText = title; 
 
     const contentElement = window.document.createElement('p');
-    contentElement.innerText = content; // Estableix el contingut
+    contentElement.innerText = content; 
 
     const priorityElement = window.document.createElement('p');
-    priorityElement.innerText = `Prioritat: ${priority}`; // Estableix la prioritat
+    priorityElement.innerText = `Prioritat: ${priority}`;
 
     // Afegeix tots els elements al noteDiv
     noteDiv.appendChild(titleElement);
